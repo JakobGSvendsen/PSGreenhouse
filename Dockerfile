@@ -7,6 +7,7 @@ ENV PS_VERSION=6.2.0
 ENV PS_PACKAGE=powershell-${PS_VERSION}-linux-arm32.tar.gz
 ENV PS_PACKAGE_URL=https://github.com/PowerShell/PowerShell/releases/download/v${PS_VERSION}/${PS_PACKAGE}
 ENV WIRINGPI_CODES=1
+
 RUN \
   apt-get update \
   && apt-get install --no-install-recommends ca-certificates libunwind8 libssl1.0 libicu60 wget --yes \
@@ -16,5 +17,6 @@ RUN \
   && ln -s /root/powershell/pwsh /usr/bin/pwsh \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
+
 
 ENTRYPOINT ["pwsh"]
