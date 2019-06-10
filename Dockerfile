@@ -6,7 +6,7 @@ FROM arm32v7/ubuntu:bionic
 ENV PS_VERSION=6.2.0
 ENV PS_PACKAGE=powershell-${PS_VERSION}-linux-arm32.tar.gz
 ENV PS_PACKAGE_URL=https://github.com/PowerShell/PowerShell/releases/download/v${PS_VERSION}/${PS_PACKAGE}
-
+ENV WIRINGPI_CODES=1
 RUN \
   apt-get update \
   && apt-get install --no-install-recommends ca-certificates libunwind8 libssl1.0 libicu60 wget --yes \
@@ -17,4 +17,4 @@ RUN \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["sudo WIRINGPI_CODES=1 pwsh"]
+ENTRYPOINT ["pwsh"]
