@@ -119,7 +119,7 @@ Function Start-DHT{
         }
     
     }
-    Register-ObjectEvent -InputObject $sensor -EventName "OnDataAvailable" -Action $actionOnDataAvailable -MessageData $Configuration
+    Register-ObjectEvent -InputObject $sensor -EventName "OnDataAvailable" -Action $actionOnDataAvailable -MessageData $global:Configuration
     $sensor.Start(30) #every 30 seconds
 
 } #Function Start-DHT{
