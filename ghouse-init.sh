@@ -1,2 +1,3 @@
-﻿docker build --tag greenhouse https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/Dockerfile;
+﻿#!/bin/sh -e
+docker build --tag greenhouse https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/Dockerfile;
 docker run --interactive --tty --privileged -v /home/pi/pswh/GHouseConfig.json:/root/greenhouse/GHouseConfig.json greenhouse;
