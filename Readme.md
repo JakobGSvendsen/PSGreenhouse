@@ -1,6 +1,8 @@
 sudo docker build "https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/Dockerfile"
 sudo docker run --interactive --tty --privileged greenhouse
 
+screen sudo docker run --interactive --tty --privileged greenhouse
+
  INSTALL-Module Microsoft.PowerShell.IoT -Force
  Import-Module Microsoft.PowerShell.IoT
 

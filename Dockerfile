@@ -19,8 +19,8 @@ RUN \
   && rm -rf /var/lib/apt/lists/*
 
 RUN \
-  mkdir /greenhouse \
-  && cd /greenhouse \
+  mkdir ~/greenhouse \
+  && cd ~/greenhouse \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.2.ps1 \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/iot.zip
 
