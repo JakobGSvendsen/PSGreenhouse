@@ -21,8 +21,9 @@ RUN \
 RUN \
   mkdir ~/greenhouse \
   && cd ~/greenhouse \
-  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.3.ps1 \
+  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.4.ps1 \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/iot.zip \
+  && unzip .\iot.zip \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/start.sh
 
-ENTRYPOINT ["pwsh"]
+ENTRYPOINT ["~/greenhouse/start.sh"]
