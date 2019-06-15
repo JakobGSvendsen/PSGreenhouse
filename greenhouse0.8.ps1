@@ -4,7 +4,7 @@ cd $PSScriptRoot
 Import-Module ./iot/Microsoft.PowerShell.IoT/
 Get-GpioPin #to init PI. TODO fix the code in IoT module to trigger the init when loading
 
-$global:Configuration = Get-Content ./GHouseConfig.json | ConvertFrom-Json
+$global:AppSettings = Get-Content ./GHouseConfig.json | ConvertFrom-Json
 
 
 <#
@@ -20,8 +20,8 @@ Add-Type -PassThru -Path ".\iot\Unosquare.RaspberryIO.Peripherals.dll"
 
 Function Get-Configuration {
     param(
-        $APIKey = $global:Configuration.GetApiKey,
-        $Uri = $global:Configuration.GetUri
+        $APIKey = $global:AppSettings.GetApiKey,
+        $Uri = $global:AppSettings.GetUri
     )
     $Headers = @{
         "x-functions-key" = $APIKey
@@ -119,7 +119,7 @@ Function Start-DHT{
         }
     
     }
-    Register-ObjectEvent -InputObject $sensor -EventName "OnDataAvailable" -Action $actionOnDataAvailable -MessageData $global:Configuration
+    Register-ObjectEvent -InputObject $sensor -EventName "OnDataAvailable" -Action $actionOnDataAvailable -MessageData $global:AppSettings
     $sensor.Start(30) #every 30 seconds
 
 } #Function Start-DHT{
