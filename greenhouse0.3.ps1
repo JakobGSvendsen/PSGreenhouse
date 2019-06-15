@@ -1,7 +1,9 @@
 get-job | stop-job -PassThru | Remove-Job
-Import-Module /home/pi/iot/Microsoft.PowerShell.IoT/
-Get-GpioPin #to init PI. TODO fix the code in IoT module to trigger the init when loading
 cd $PSScriptRoot
+
+Import-Module ./iot/Microsoft.PowerShell.IoT/
+Get-GpioPin #to init PI. TODO fix the code in IoT module to trigger the init when loading
+
 $global:Configuration = Get-Content ./GHouseConfig.json | ConvertFrom-Json
 
 

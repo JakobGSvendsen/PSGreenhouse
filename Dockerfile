@@ -10,7 +10,7 @@ ENV WIRINGPI_CODES=1
 
 RUN \
   apt-get update \
-  && apt-get install --no-install-recommends ca-certificates libunwind8 libssl1.0 libicu60 wget --yes \
+  && apt-get install --no-install-recommends ca-certificates libunwind8 libssl1.0 libicu60 wget unzip --yes \
   && wget https://github.com/PowerShell/PowerShell/releases/download/v${PS_VERSION}/${PS_PACKAGE} \
   && mkdir ~/powershell \
   && tar -xvf ./${PS_PACKAGE} -C ~/powershell \
@@ -21,7 +21,7 @@ RUN \
 RUN \
   mkdir ~/greenhouse \
   && cd ~/greenhouse \
-  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.2.ps1 \
+  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.3.ps1 \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/iot.zip \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/start.sh
 

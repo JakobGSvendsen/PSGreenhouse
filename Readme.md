@@ -1,6 +1,11 @@
 sudo docker build --tag greenhouse "https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/Dockerfile"
 sudo docker run --interactive --tty --privileged greenhouse
 
+ sudo docker run --interactive --tty --privileged -v /home/pi/pswh/GHouseConfig.json:/root/greenhouse/GHouseConfig.json greenhouse
+
+
+unzip ./iot.zip -C .\
+
 screen sudo docker run --interactive --tty --privileged greenhouse
 
  INSTALL-Module Microsoft.PowerShell.IoT -Force
