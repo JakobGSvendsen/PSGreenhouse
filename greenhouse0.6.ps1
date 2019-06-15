@@ -71,8 +71,8 @@ Function Start-DHT{
         {
             
            write-verbose ($event.SourceEventArgs|out-string)
-           if(!(Get-Command Get-GPIoPin -ErrorAction SilentlyContinue)){
-            Import-Module ./iot/Microsoft.PowerShell.IoT/
+           if(!(Get-Command Get-GpioPin -ErrorAction SilentlyContinue)){
+            Import-Module ./iot/Microsoft.PowerShell.IoT/ -Cmdlet Get-GpioPin
            }
            $APIKey = $event.MessageData.SendApiKey
            $Uri = $event.MessageData.SendUri
