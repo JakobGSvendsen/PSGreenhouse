@@ -13,10 +13,10 @@ invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.RaspberryIO.Periphe
 invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.Raspberry.Abstractions.dll" -OutFile .\Unosquare.Raspberry.Abstractions.dll
 invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.RaspberryIO.dll" -OutFile .\Unosquare.RaspberryIO.dll
 #>
-Add-Type -PassThru -Path ".\Unosquare.Swan.Lite.dll"
-Add-Type -PassThru -Path ".\Unosquare.RaspberryIO.dll"
-Add-Type -PassThru -Path ".\Unosquare.Raspberry.Abstractions.dll"
-Add-Type -PassThru -Path ".\Unosquare.RaspberryIO.Peripherals.dll"
+Add-Type -PassThru -Path ".\iot\Unosquare.Swan.Lite.dll"
+Add-Type -PassThru -Path ".\iot\Unosquare.RaspberryIO.dll"
+Add-Type -PassThru -Path ".\iot\Unosquare.Raspberry.Abstractions.dll"
+Add-Type -PassThru -Path ".\iot\Unosquare.RaspberryIO.Peripherals.dll"
 
 Function Get-Configuration {
     param(
