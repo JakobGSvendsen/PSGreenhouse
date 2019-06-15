@@ -26,4 +26,4 @@ RUN \
   && unzip iot.zip \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/start.sh
 
-ENTRYPOINT ["~/greenhouse/start.sh"]
+ENTRYPOINT ["pwsh"]
