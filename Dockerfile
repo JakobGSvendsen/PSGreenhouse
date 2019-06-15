@@ -16,8 +16,10 @@ RUN \
   && tar -xvf ./${PS_PACKAGE} -C ~/powershell \
   && ln -s /root/powershell/pwsh /usr/bin/pwsh \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* \
-  && mkdir ~/greenhouse \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN \
+  mkdir ~/greenhouse \
   && cd ~/greenhouse \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.2.ps1 \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/iot.zip
