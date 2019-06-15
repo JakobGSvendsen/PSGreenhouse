@@ -25,4 +25,4 @@ RUN \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/iot.zip
 
 
-ENTRYPOINT ["powershell"]
+ENTRYPOINT ["pswh ~/greenhouse/greenhouse0.2.ps1"]

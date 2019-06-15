@@ -1,4 +1,4 @@
-sudo docker build "https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/Dockerfile"
+sudo docker build --tag greenhouse "https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/Dockerfile"
 sudo docker run --interactive --tty --privileged greenhouse
 
 screen sudo docker run --interactive --tty --privileged greenhouse
