@@ -1,1 +1,1 @@
-pswh
+pwsh
