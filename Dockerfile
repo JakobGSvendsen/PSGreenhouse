@@ -10,7 +10,7 @@ ENV WIRINGPI_CODES=1
 
 RUN \
   apt-get update \
-  && apt-get install --no-install-recommends ca-certificates libunwind8 libssl1.0 libicu60 wget --yes \
+  && apt-get install --no-install-recommends ca-certificates libunwind8 libssl1.0 libicu60 screen wget --yes \
   && wget https://github.com/PowerShell/PowerShell/releases/download/v${PS_VERSION}/${PS_PACKAGE} \
   && mkdir ~/powershell \
   && tar -xvf ./${PS_PACKAGE} -C ~/powershell \
@@ -18,5 +18,10 @@ RUN \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+RUN \
+  mkdir /greenhouse \
+  && cd /greenhouse \
+  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.2.ps1 /greenhouse/greenhouse.ps1
 
-ENTRYPOINT ["pwsh"]
+
+ENTRYPOINT ["screen powershell /greenhouse/greenhouse.ps1"]
