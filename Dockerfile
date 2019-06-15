@@ -21,7 +21,7 @@ RUN \
 RUN \
   mkdir /greenhouse \
   && cd /greenhouse \
-  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.2.ps1 /greenhouse/greenhouse.ps1
+  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.2.ps1 /greenhouse.ps1
 
 
-ENTRYPOINT ["powershell /greenhouse/greenhouse.ps1"]
+ENTRYPOINT ["powershell /greenhouse.ps1"]
