@@ -66,18 +66,22 @@ Function Start-DHT{
     
     $actionOnDataAvailable = {
         $VerbosePreference = "Continue"
-        Import-Module ./iot/Microsoft.PowerShell.IoT/
-        
-        $APIKey = $event.MessageData.SendApiKey
-        $Uri = $event.MessageData.SendUri
-    
-        $Headers = @{
-            "x-functions-key" = $APIKey
-        }
+
         if($event.SourceEventArgs.IsValid)
         {
+            
            write-verbose ($event.SourceEventArgs|out-string)
-            $Humidity = $event.SourceEventArgs.HumidityPercentage
+           
+           Import-Module ./iot/Microsoft.PowerShell.IoT/
+        
+           $APIKey = $event.MessageData.SendApiKey
+           $Uri = $event.MessageData.SendUri
+       
+           $Headers = @{
+               "x-functions-key" = $APIKey
+           } 
+           
+           $Humidity = $event.SourceEventArgs.HumidityPercentage
             $Temperature_C = $event.SourceEventArgs.Temperature
             $Temperature_F = $event.SourceEventArgs.TemperatureFahrenheit
             $Relay_1 = if((Get-GpioPin -Id 13).value -eq "High"){1}else{0}
