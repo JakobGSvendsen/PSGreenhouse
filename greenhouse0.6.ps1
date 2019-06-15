@@ -13,7 +13,7 @@ invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.RaspberryIO.Periphe
 invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.Raspberry.Abstractions.dll" -OutFile .\Unosquare.Raspberry.Abstractions.dll
 invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.RaspberryIO.dll" -OutFile .\Unosquare.RaspberryIO.dll
 #>
-Add-Type -PassThru -Path ".\iot\Unosquare.Swan.Lite.dll"
+#Add-Type -PassThru -Path ".\iot\Unosquare.Swan.Lite.dll"
 Add-Type -PassThru -Path ".\iot\Unosquare.RaspberryIO.dll"
 Add-Type -PassThru -Path ".\iot\Unosquare.Raspberry.Abstractions.dll"
 Add-Type -PassThru -Path ".\iot\Unosquare.RaspberryIO.Peripherals.dll"
@@ -71,9 +71,9 @@ Function Start-DHT{
         {
             
            write-verbose ($event.SourceEventArgs|out-string)
-           
-           Import-Module ./iot/Microsoft.PowerShell.IoT/
-        
+           if(!(Get-Command Get-GPIoPin -ErrorAction SilentlyContinue)){
+            Import-Module ./iot/Microsoft.PowerShell.IoT/
+           }
            $APIKey = $event.MessageData.SendApiKey
            $Uri = $event.MessageData.SendUri
        
