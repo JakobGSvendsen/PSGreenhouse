@@ -71,9 +71,9 @@ Function Start-DHT{
         {
             
            write-verbose ($event.SourceEventArgs|out-string)
-           if(!(Get-Command Get-GpioPin -ErrorAction SilentlyContinue)){
-            Import-Module ./iot/Microsoft.PowerShell.IoT/ -Cmdlet Get-GpioPin
-           }
+           #if(!(Get-Command Get-GpioPin -ErrorAction SilentlyContinue)){
+           # Import-Module ./iot/Microsoft.PowerShell.IoT/ -Cmdlet Get-GpioPin
+           #}
            $APIKey = $event.MessageData.SendApiKey
            $Uri = $event.MessageData.SendUri
        
@@ -84,9 +84,9 @@ Function Start-DHT{
            $Humidity = $event.SourceEventArgs.HumidityPercentage
             $Temperature_C = $event.SourceEventArgs.Temperature
             $Temperature_F = $event.SourceEventArgs.TemperatureFahrenheit
-            $Relay_1 = if((Get-GpioPin -Id 13).value -eq "High"){1}else{0}
-            $Relay_2 = if((Get-GpioPin -Id 26).value -eq "High"){1}else{0}
-            $Relay_4 = if((Get-GpioPin -Id 19).value -eq "High"){1}else{0}
+           # $Relay_1 = if((Get-GpioPin -Id 13).value -eq "High"){1}else{0}
+           # $Relay_2 = if((Get-GpioPin -Id 26).value -eq "High"){1}else{0}
+           # $Relay_4 = if((Get-GpioPin -Id 19).value -eq "High"){1}else{0}
 
             
             #send metric alpha
@@ -96,14 +96,14 @@ Function Start-DHT{
                     Humidity = $Humidity
                     Temperature_C = $Temperature_C
                     Temperature_F = $Temperature_F
-                    Soil_1 = 800
-                    Soil_2 = 800
-                    Soil_3 = 800
-                    Soil_4 = 800
-                    Relay_1 = $Relay_1 
-                    Relay_2 = $Relay_2
-                    Relay_3 = "HIGH"
-                    Relay_4 = $Relay_4
+                    #Soil_1 = 800
+                    #Soil_2 = 800
+                    #Soil_3 = 800
+                    #Soil_4 = 800
+                    #Relay_1 = $Relay_1 
+                    #Relay_2 = $Relay_2
+                    #Relay_3 = "HIGH"
+                    #Relay_4 = $Relay_4
                     }
                 write-verbose $MetricObject
                 
