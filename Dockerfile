@@ -28,4 +28,4 @@ RUN \
 
 
 ENTRYPOINT ["pwsh"]
-CMD ["/root/greenhouse/greenhouse0.8.ps1"]
+CMD ["/root/greenhouse/greenhouse0.8.1.ps1"]
