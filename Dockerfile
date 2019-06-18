@@ -19,13 +19,13 @@ RUN \
   && rm -rf /var/lib/apt/lists/*
 
 RUN \
-  mkdir ~/greenhouse \
+  GHOUSE_VERSION = "0.8.2" \
+  && mkdir ~/greenhouse \
   && cd ~/greenhouse \
-  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse0.8.1.ps1 \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/iot.zip \
   && unzip iot.zip \
-  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/start.sh
-
+  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/start.sh \
+  && wget -O greenhouse.ps1 https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse${GHOUSE_VERSION}.ps1 
 
 ENTRYPOINT ["pwsh"]
-CMD ["/root/greenhouse/greenhouse0.8.1.ps1"]
+CMD ["/root/greenhouse/greenhouse.ps1"]

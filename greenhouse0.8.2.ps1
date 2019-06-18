@@ -130,8 +130,8 @@ Function Start-DHT{
 $VerbosePreference = "Continue"
 $shouldRun = $true
 while($shouldRun){
-    Write-Output "Start Loop: $(Get-Date)"
-
+    Write-Output "Start Loop: $(Get-Date)"  
+    Write-Output "Version: $($env:GHOUSE_VERSION)"
     try {
 #Write-Output "Sending Metrics"
 #Send-Metrics
