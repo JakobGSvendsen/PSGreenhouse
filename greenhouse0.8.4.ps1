@@ -53,7 +53,7 @@ if($Configuration.Valve2 -eq "ON") {
 } else {
    Write-Output "Turning Value 2 Off"
     Set-GpioPin -Id 26 -Value "Low"
-    $Global:Relay2State = 1
+    $Global:Relay2State = 0
 }
 
 if($Configuration.Valve4 -eq "ON") {
