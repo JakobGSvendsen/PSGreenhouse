@@ -19,7 +19,7 @@ RUN \
   && rm -rf /var/lib/apt/lists/*
 
 RUN \
-  GHOUSE_VERSION=0.8.3 \
+  GHOUSE_VERSION=0.8.2 \
   && mkdir ~/greenhouse \
   && cd ~/greenhouse \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/iot.zip \
