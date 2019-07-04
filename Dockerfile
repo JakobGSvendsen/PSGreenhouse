@@ -17,14 +17,15 @@ RUN \
   && ln -s /root/powershell/pwsh /usr/bin/pwsh \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
-
 RUN \
-  GHOUSE_VERSION=0.8.4 \
+  GHOUSE_TOOLS_VERSION=0.0.1 \
   && mkdir ~/greenhouse \
   && cd ~/greenhouse \
   && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/iot.zip \
-  && unzip iot.zip \
-  && wget https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/start.sh \
+  && unzip iot.zip
+
+RUN \
+  GHOUSE_VERSION=0.8.4 \
   && wget -O greenhouse.ps1 https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse${GHOUSE_VERSION}.ps1 
 
 ENTRYPOINT ["pwsh"]
