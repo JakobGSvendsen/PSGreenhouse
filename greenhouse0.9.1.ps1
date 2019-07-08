@@ -62,11 +62,11 @@ if($Configuration.Valve2 -eq "ON") {
 }
 
 if($Configuration.Valve3 -eq "ON") {
-    Write-Output "Turning Value 4 on"
+    Write-Output "Turning Value 3 on"
     Set-GpioPin -Id $global:Relay3Pin -Value "High"
     $Global:Relay3State = 1
 } else {
-   Write-Output "Turning Value 4 Off"
+   Write-Output "Turning Value 3 Off"
     Set-GpioPin -Id $global:Relay3Pin -Value "Low"
     $Global:Relay3State = 0
 }
