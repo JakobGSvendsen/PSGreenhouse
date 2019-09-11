@@ -24,3 +24,7 @@ screen sudo docker run --interactive --tty --privileged greenhouse
 
 screen powershell /home/pi/pswh/greenhouse0.1.ps1
 sudo nano /etc/rc.local
+
+/etc/init.d
+sudo nano ghouse-init
+
