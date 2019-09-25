@@ -180,7 +180,7 @@ while ($shouldRun) {
             Restart-Computer -Force
         }
 
-        Write-Output "Loop complete: $(get-date)"
+        Write-Output "Loop complete: $(get-date) - www.ctglobalservices.com"
     }
     catch {
         Write-Output "Loop failed - Error:"
