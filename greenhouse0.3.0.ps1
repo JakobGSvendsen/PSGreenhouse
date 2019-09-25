@@ -176,8 +176,11 @@ while ($shouldRun) {
 
         get-job | Receive-Job | out-string
 
+        Write-Output "Start Time: $startTime"
+        $Duration = ((get-date) - $startTime).TotalMinutes
+        Write-Output "Duration: $Duration"
         #workaround for dockerd crashing issue. reboot every hour
-        if(((get-date) - $startTime).TotalHours -gt 1) {
+        if($Duration -gt 60) {
             Restart-Computer -Force
         }
     }
