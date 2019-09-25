@@ -179,8 +179,6 @@ while ($shouldRun) {
         if(((get-date) - $startTime).TotalHours -gt 1) {
             Restart-Computer -Force
         }
-
-        Write-Output "Loop complete: $(get-date) - www.ctglobalservices.com"
     }
     catch {
         Write-Output "Loop failed - Error:"
@@ -196,7 +194,7 @@ while ($shouldRun) {
     }
 
     Write-Output "Waiting 15 seconds"
-    Write-Output "End Loop: $(Get-Date)"
+    Write-Output "End Loop: $(Get-Date) - www.ctglobalservices.com"
     Start-Sleep -Seconds 15
 }
 
