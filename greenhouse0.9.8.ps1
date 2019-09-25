@@ -1,3 +1,4 @@
+$Version = "0.9.8"
 get-job | stop-job -PassThru | Remove-Job
 cd $PSScriptRoot
 $ErrorActionPreference = "Stop"
@@ -162,7 +163,7 @@ $VerbosePreference = "Continue"
 $shouldRun = $true
 while ($shouldRun) {
     Write-Output "Start Loop: $(Get-Date)"  
-    Write-Output "Version: $($env:GHOUSE_VERSION)"
+    Write-Output "Version: $Version"
     try {
         #Write-Output "Sending Metrics"
         #Send-Metrics
