@@ -1,4 +1,4 @@
-$Version = "0.9.8"
+$Version = "0.3.1"
 get-job | stop-job -PassThru | Remove-Job
 cd $PSScriptRoot
 $ErrorActionPreference = "Stop"
@@ -178,7 +178,7 @@ while ($shouldRun) {
 
         Write-Output "Start Time: $startTime"
         $Duration = ((get-date) - $startTime).TotalMinutes
-        Write-Output "Duration: $Duration"
+        Write-Output "Duration: $Duration Minutes"
         #workaround for dockerd crashing issue. reboot every hour
         if($Duration -gt 60) {
             Restart-Computer -Force
