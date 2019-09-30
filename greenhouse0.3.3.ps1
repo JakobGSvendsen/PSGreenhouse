@@ -182,9 +182,9 @@ while ($shouldRun) {
         Write-Output "Duration: $Duration Hours"
 
         #Reboot every day to make sure config is updated
-        if($Duration -gt 24) {
-            Restart-Computer -Force
-        }
+       # if($Duration -gt 24) {
+       #     Restart-Computer -Force
+       # }
     }
     catch {
         Write-Output "Loop failed - Error:"
