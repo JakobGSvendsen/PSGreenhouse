@@ -25,7 +25,7 @@ RUN \
   && unzip iot.zip
 
 RUN \
-  GHOUSE_VERSION=0.3.3 \
+  GHOUSE_VERSION=0.3.4 \
   && cd ~/greenhouse \
   && wget -O greenhouse.ps1 https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/greenhouse${GHOUSE_VERSION}.ps1 
 
