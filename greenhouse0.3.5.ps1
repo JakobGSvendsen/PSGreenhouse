@@ -1,4 +1,4 @@
-$Version = "0.3.4"
+$Version = "0.3.5"
 get-job | stop-job -PassThru | Remove-Job
 cd $PSScriptRoot
 $ErrorActionPreference = "Stop"
@@ -18,12 +18,6 @@ $global:AppSettings = Get-Content ./GHouseConfig.json | ConvertFrom-Json
 
 $startTime = Get-Date
 
-<#
-#saved for docker auto download 
-invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.RaspberryIO.Peripherals.dll" -OutFile .\Unosquare.RaspberryIO.Peripherals.dll
-invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.Raspberry.Abstractions.dll" -OutFile .\Unosquare.Raspberry.Abstractions.dll
-invoke-webrequest -uri "http://www.bk-kapow.dk/jgs/Unosquare.RaspberryIO.dll" -OutFile .\Unosquare.RaspberryIO.dll
-#>
 #Add-Type -PassThru -Path ".\iot\Unosquare.Swan.Lite.dll"
 Add-Type -PassThru -Path ".\iot\Unosquare.RaspberryIO.dll"
 Add-Type -PassThru -Path ".\iot\Unosquare.Raspberry.Abstractions.dll"
@@ -165,9 +159,6 @@ while ($shouldRun) {
     Write-Output "Start Loop: $(Get-Date)"  
     Write-Output "Version: $Version"
     try {
-        #Write-Output "Sending Metrics"
-        #Send-Metrics
-
         Write-Output "Getting Configuration"
         $Configuration = Get-Configuration
         $Configuration
@@ -180,23 +171,21 @@ while ($shouldRun) {
         Write-Output "Start Time: $startTime"
         $Duration = ((get-date) - $startTime).TotalHours
         Write-Output "Duration: $Duration Hours"
-
-        #Reboot every day to make sure config is updated
-       # if($Duration -gt 24) {
-       #     Restart-Computer -Force
-       # }
     }
     catch {
         Write-Output "Loop failed - Error:"
         Write-Output $_
 
+        #Force it to continue on below commands, as these are resettting the machine and rebooting in the end.
+        $ErrorActionPreference = "silentlycontinue"
         #Turn off all pumps
-        Set-GpioPin -Id $global:Relay1Pin -Value "Low"
+        Set-GpioPin -Id $global:Relay1Pin -Value "Low" 
         Set-GpioPin -Id $global:Relay2Pin -Value "Low"
         Set-GpioPin -Id $global:Relay3Pin -Value "Low"
         Set-GpioPin -Id $global:Relay4Pin -Value "Low"
 
-        Start-DHT
+        #Restart computer
+        Restart-Computer -Force
     }
 
     Write-Output "Waiting 15 seconds"
