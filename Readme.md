@@ -2,9 +2,7 @@
 
 This library can be used to connect
 
-# Setup Guide
-
-## Install Raspian on SD Card
+# Install Raspian on SD Card
 
 Follow the offical guide and install the newest raspian
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
@@ -26,10 +24,37 @@ All you need to do afterwards is to update the config file
 
 Run these commands to install the solution:
 
-sudo curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/install.sh -o install.sh
+sudo sh install.sh
+
+## Setup Greenhouse json config file
+
+To keep secrets out of the repo, we are using a local json config file for api keys etc.
+
+1. open file by using command:
+sudo nano /home/pi/pswh/GHouseConfig.json
+1. Paste modified content from ghouseConfig_example.json
+1. Save the file at  /home/pi/pswh/GHouseConfig.json
+
+(File can be placed differently but you will have to update ghouse-init.sh if you do)
 
 # Manual Installation
+
+## Setup Greenhouse json config file
+
+To keep secrets out of the repo, we are using a local json config file for api keys etc.
+
+1. Use the ghouseConfig_example.json as a base and add your own values
+1. Create folder
+sudo mkdir pswh
+1. Get example config from repo
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouseConfig_example.json -o /home/pi/pswh/GHouseConfig.json
+1. Open file by using command:
+sudo nano /home/pi/pswh/GHouseConfig.json
+1. Paste modified content from ghouseConfig_example.json
+1. Save the file at  /home/pi/pswh/GHouseConfig.json
+
+(File can be placed differently but you will have to update ghouse-init.sh if you do)
 
 ## Install Docker 
 
