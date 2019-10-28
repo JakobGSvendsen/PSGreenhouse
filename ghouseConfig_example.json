@@ -1,0 +1,6 @@
+{
+    "SendUri": "https://xxxxx.azurewebsites.net/api/OMSInject",
+    "SendApiKey": "xxxxxxx",
+    "GetUri": "https://xxxx.azurewebsites.net/api/GetConfiguration?Name=Home",
+    "GetApiKey": "xxxx"
+}
