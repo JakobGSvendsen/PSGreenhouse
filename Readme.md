@@ -116,3 +116,15 @@ screen -dr
 
 NB! Use Ctrl+a+d to detach screen again when you are done.
 
+# Parts
+Raspberry PI 3 or 4.
+
+DHT22 2302 Digital Temperature and Humidity Sensor Module - White
+https://www.dx.com/p/dht22-2302-digital-temperature-and-humidity-sensor-module-2023234.html#.XbbS1ehKhaQ
+
+4-Channel 5V 12V Relay Module
+Example:
+https://www.dx.com/p/4-channel-5v-12v-relay-module-w-optocoupler-blue-expanded-version-2080783.html#.XbbSlehKhaQ
+
+1-4 x DC6-12V R385 Aquarium Fish Tank Round Water Air DC Diaphragm Pump
+https://www.banggood.com/DC6-12V-R385-Aquarium-Fish-Tank-Round-Water-Air-DC-Diaphragm-Pump-p-1037303.html?rmmds=search
