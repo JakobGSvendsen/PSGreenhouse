@@ -1,4 +1,4 @@
-$Version = "0.3.7"
+$Version = "0.3.8"
 get-job | stop-job -PassThru | Remove-Job
 cd $PSScriptRoot
 $ErrorActionPreference = "Stop"
@@ -31,7 +31,10 @@ Function Get-Configuration {
     $Headers = @{
         "x-functions-key" = $APIKey
     }
-    $response = Invoke-WebRequest -Uri $Uri -UseBasicParsing -Headers $Headers
+
+    #Add hostname to url
+    $UriFull = "$($Uri)?Name=$(hostname)"
+    $response = Invoke-WebRequest -Uri $UriFull -UseBasicParsing -Headers $Headers
     $response.Content | ConvertFrom-JSON
 }
 
