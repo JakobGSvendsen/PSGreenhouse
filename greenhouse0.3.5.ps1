@@ -1,4 +1,4 @@
-$Version = "0.3.5"
+$Version = "0.3.6"
 get-job | stop-job -PassThru | Remove-Job
 cd $PSScriptRoot
 $ErrorActionPreference = "Stop"
@@ -117,7 +117,7 @@ Function Start-DHT {
             #send metric alpha
             #"{\"Name\":\"Home\",\"Humidity\":%d,\"Temperature_C\":%d.%02d,\"Temperature_F\":%d.%02d,\"Soil_1\":%d,\"Soil_2\":%d,\"Soil_3\":%d,\"Soil_4\":%d,\"Soil_5\":%d,\"Soil_6\":%d,\"Relay_1\":%d,\"Relay_2\":%d,\"Relay_3\":%d,\"Relay_4\":%d}",
             $MetricObject = [pscustomobject]@{
-                Name          = "HomePS"
+                Name          = $(hostname) #"HomePS"
                 Humidity      = $Humidity
                 Temperature_C = $Temperature_C
                 Temperature_F = $Temperature_F
