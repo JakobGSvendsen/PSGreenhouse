@@ -2,7 +2,7 @@
 
 This library can be used to connect
 
-# Setup  Guide
+# Setup Guide
 
 ## Install Raspian on SD Card
 
@@ -18,6 +18,18 @@ https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
 
 Enable SSH if you want to remote control (Very good idea!)
 https://www.raspberrypi.org/documentation/remote-access/ssh/
+
+# Quick Installation
+
+The install-sh script from this repo set up most of the configuration.
+All you need to do afterwards is to update the config file
+
+Run these commands to install the solution:
+
+sudo curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+# Manual Installation
 
 ## Install Docker 
 
@@ -43,6 +55,8 @@ To keep secrets out of the repo, we are using a local json config file for api k
 1. Use the ghouseConfig_example.json as a base and add your own values
 1. Create folder
 sudo mkdir pswh
+1. Get example config from repo
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouseConfig_example.json -o /home/pi/pswh/GHouseConfig.json
 1. Create file by using command:
 sudo nano /home/pi/pswh/GHouseConfig.json
 1. Paste modified content from ghouseConfig_example.json
@@ -54,10 +68,8 @@ sudo nano /home/pi/pswh/GHouseConfig.json
 
 We want to add a script that is called on boot to start our container in a screen shell (for easy connection)
 
-1. start nano
-sudo nano /home/pi/ghouse-init.sh
-1. paste content from ghouse-init.sh in this repo
-1. Save file
+1. Get the ghouse init file from repo
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouse-init.sh -o /home/pi/ghouse-init.sh
 1. Set execute permissions
 sudo chmod 777 /home/pi/ghouse-init.sh
 
@@ -67,10 +79,8 @@ In this solution we're getting the dockerFile directly from github on each boot.
 the ghouse-init.sh file is 
 
 Do the following steps
-1. open rc.local
-sudo nano /etc/rc.local
-1. Replace the content with the content from rc.local in this repo
-1. Save file
+1. get the rc.local from the repo and overwrite local rc.local (NB! if you have any local addons in there, please open the file and copy the lines you need)
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/rc.local -o /etc/rc.local
 
 ## Post actions
 1. Reboot !
