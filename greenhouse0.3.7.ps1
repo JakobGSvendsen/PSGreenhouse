@@ -1,4 +1,4 @@
-$Version = "0.3.6"
+$Version = "0.3.7"
 get-job | stop-job -PassThru | Remove-Job
 cd $PSScriptRoot
 $ErrorActionPreference = "Stop"
@@ -157,6 +157,7 @@ $VerbosePreference = "Continue"
 $shouldRun = $true
 while ($shouldRun) {
     Write-Output "Start Loop: $(Get-Date)"  
+    Write-Output "HostName: $(hostname)"
     Write-Output "Version: $Version"
     try {
         Write-Output "Getting Configuration"

@@ -1,0 +1,18 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_EXTENSION_VERSION": "~1",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=azurefunctions8c4b4a68;AccountKey=BqtnwhzjE0/xUJU2B7hTDoj65yEdX9rlZ/rlcyOMFUd73cweY2qengBQ9pH6PCvcZwCE/RB8conzsicoD/Yj4w==",
+    "WEBSITE_SITE_NAME": "IoTHelper",
+    "WEBSITE_AUTH_ENABLED": "False",
+    "REMOTEDEBUGGINGVERSION": "11.0.611103.400",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=azurefunctions8c4b4a68;AccountKey=BqtnwhzjE0/xUJU2B7hTDoj65yEdX9rlZ/rlcyOMFUd73cweY2qengBQ9pH6PCvcZwCE/RB8conzsicoD/Yj4w==",
+    "ScmType": "None",
+    "WEBSITE_CONTENTSHARE": "iothelper",
+    "azurefunctions8c4b4a68_STORAGE": "DefaultEndpointsProtocol=https;AccountName=azurefunctions8c4b4a68;AccountKey=BqtnwhzjE0/xUJU2B7hTDoj65yEdX9rlZ/rlcyOMFUd73cweY2qengBQ9pH6PCvcZwCE/RB8conzsicoD/Yj4w==",
+    "WEBSITE_SLOT_NAME": "Production",
+    "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
+    "AzureWebJobsDashboard": "DefaultEndpointsProtocol=https;AccountName=azurefunctions8c4b4a68;AccountKey=BqtnwhzjE0/xUJU2B7hTDoj65yEdX9rlZ/rlcyOMFUd73cweY2qengBQ9pH6PCvcZwCE/RB8conzsicoD/Yj4w==",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "0a49400a-cf5b-4cfc-a323-00d93e4507f9"
+  }
+}

@@ -24,15 +24,15 @@ All you need to do afterwards is to update the config file
 
 Run these commands to install the solution:
 
-sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/install.sh -o install.sh
-sudo sh install.sh
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/install.sh -o install.sh  
+sudo sh install.sh  
 
 ## Setup Greenhouse json config file
 
 To keep secrets out of the repo, we are using a local json config file for api keys etc.
 
 1. open file by using command:
-sudo nano /home/pi/pswh/GHouseConfig.json
+sudo nano /home/pi/pswh/GHouseConfig.json  
 1. Paste modified content from ghouseConfig_example.json
 1. Save the file at  /home/pi/pswh/GHouseConfig.json
 
@@ -46,11 +46,11 @@ To keep secrets out of the repo, we are using a local json config file for api k
 
 1. Use the ghouseConfig_example.json as a base and add your own values
 1. Create folder
-sudo mkdir pswh
+sudo mkdir pswh  
 1. Get example config from repo
-sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouseConfig_example.json -o /home/pi/pswh/GHouseConfig.json
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouseConfig_example.json -o /home/pi/pswh/GHouseConfig.json  
 1. Open file by using command:
-sudo nano /home/pi/pswh/GHouseConfig.json
+sudo nano /home/pi/pswh/GHouseConfig.json  
 1. Paste modified content from ghouseConfig_example.json
 1. Save the file at  /home/pi/pswh/GHouseConfig.json
 
@@ -65,13 +65,13 @@ Trevor does a great job explaning why and how this works.
 For this setup you only need to install docker by using these commands:
 
 1. Install Docker
-sudo curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+sudo curl -fsSL https://get.docker.com -o get-docker.sh  
+sudo sh get-docker.sh  
 
 ## Install Screen  
 
 1. Install Screen
-sudo apt-get install screen
+sudo apt-get install screen  
 
 ## Setup Greenhouse json config file
 
@@ -79,11 +79,11 @@ To keep secrets out of the repo, we are using a local json config file for api k
 
 1. Use the ghouseConfig_example.json as a base and add your own values
 1. Create folder
-sudo mkdir pswh
+sudo mkdir pswh  
 1. Get example config from repo
-sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouseConfig_example.json -o /home/pi/pswh/GHouseConfig.json
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouseConfig_example.json -o /home/pi/pswh/GHouseConfig.json  
 1. Create file by using command:
-sudo nano /home/pi/pswh/GHouseConfig.json
+sudo nano /home/pi/pswh/GHouseConfig.json  
 1. Paste modified content from ghouseConfig_example.json
 1. Save the file at  /home/pi/pswh/GHouseConfig.json
 
@@ -94,9 +94,9 @@ sudo nano /home/pi/pswh/GHouseConfig.json
 We want to add a script that is called on boot to start our container in a screen shell (for easy connection)
 
 1. Get the ghouse init file from repo
-sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouse-init.sh -o /home/pi/ghouse-init.sh
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/ghouse-init.sh -o /home/pi/ghouse-init.sh  
 1. Set execute permissions
-sudo chmod 777 /home/pi/ghouse-init.sh
+sudo chmod 777 /home/pi/ghouse-init.sh  
 
 ## Setup Auto start of docker container using docker file from GitHub
 
@@ -105,7 +105,7 @@ the ghouse-init.sh file is
 
 Do the following steps
 1. get the rc.local from the repo and overwrite local rc.local (NB! if you have any local addons in there, please open the file and copy the lines you need)
-sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/rc.local -o /etc/rc.local
+sudo curl -fsSL https://raw.githubusercontent.com/JakobGSvendsen/PSGreenhouse/master/rc.local -o /etc/rc.local  
 
 ## Post actions
 1. Reboot !
