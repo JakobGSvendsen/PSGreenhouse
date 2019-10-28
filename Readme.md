@@ -116,7 +116,3 @@ screen -dr
 
 NB! Use Ctrl+a+d to detach screen again when you are done.
 
-
-
-## After reboot
-
