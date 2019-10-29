@@ -1,4 +1,4 @@
-$Version = "0.3.8"
+$Version = "0.4.1"
 get-job | stop-job -PassThru | Remove-Job
 cd $PSScriptRoot
 $ErrorActionPreference = "Stop"
@@ -138,7 +138,7 @@ Function Start-DHT {
             try {
                 $Body = $MetricObject | COnvertTo-JSON
                 $response = Invoke-WebRequest -Uri $Uri -UseBasicParsing -Method Post -Body $Body -Headers $Headers
-                $response
+                #$response
             }
             catch {
                 write-verbose $_
