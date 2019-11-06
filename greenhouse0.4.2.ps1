@@ -1,4 +1,4 @@
-$Version = "0.4.1"
+$Version = "0.4.2"
 get-job | stop-job -PassThru | Remove-Job
 cd $PSScriptRoot
 $ErrorActionPreference = "Stop"
