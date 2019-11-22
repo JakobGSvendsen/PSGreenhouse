@@ -174,7 +174,7 @@ while ($shouldRun) {
         #Log Time
         Write-Output "Start Time: $startTime"
         $Duration = ((get-date) - $startTime).TotalHours
-        Write-Output "Duration: $Duration Hours"
+        Write-Output ("Duration: {0:F2} Hours" -f $Duration)
     }
     catch {
         Write-Output "Loop failed - Error:"
