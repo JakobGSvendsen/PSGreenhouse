@@ -3,7 +3,7 @@
 
 FROM arm32v7/ubuntu:bionic
 
-ENV PS_VERSION=7.0.0-preview.3
+ENV PS_VERSION=7.0.0-preview.6
 ENV PS_PACKAGE=powershell-${PS_VERSION}-linux-arm32.tar.gz
 ENV PS_PACKAGE_URL=https://github.com/PowerShell/PowerShell/releases/download/v${PS_VERSION}/${PS_PACKAGE}
 ENV WIRINGPI_CODES=1
