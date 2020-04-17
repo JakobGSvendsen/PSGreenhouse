@@ -1,6 +1,10 @@
 # PSGreenhouse !
 
-This library can be used to connect
+This library can be used to connect your greenhouse to Azure
+
+This has been the subject for multiple conference sessions I have delivered. Here a link to the recording of 
+Microsoft Ignite 2019
+https://myignite.techcommunity.microsoft.com/sessions/THR3047?source=TechCommunity
 
 # Install Raspian on SD Card
 
