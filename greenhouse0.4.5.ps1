@@ -153,10 +153,10 @@ Function Start-DHT {
 
 } #Function Start-DHT{
 
-
+$VerbosePreference = "Continue"
 Write-Output "Sending Metrics"
 Start-DHT
-$VerbosePreference = "Continue"
+
 $shouldRun = $true
 while ($shouldRun) {
     Write-Output "Start Loop: $(Get-Date)"  
